@@ -20,7 +20,7 @@ if ($dbname !== '' && $usernamedb !== '') {
         @mysqli_report(MYSQLI_REPORT_OFF);
     }
     try {
-        $connect = @mysqli_connect('localhost', $usernamedb, $passworddb, $dbname);
+        $connect = @mysqli_connect('mysql.railway.internal', $usernamedb, $passworddb, $dbname);
     } catch (\Throwable $rxMysqliConnectError) {
         $connect = null;
         error_log('config.php mysqli_connect failed: ' . $rxMysqliConnectError->getMessage());
